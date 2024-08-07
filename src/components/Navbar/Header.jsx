@@ -3,15 +3,16 @@ import { Box } from "@chakra-ui/react"
 
 
 const Header = () => {
-    retunr (
+    return (
         <Box
             textAlign={"center"}
-p={["5px", "5px", "18px", "18px"]}
+p={["5px", "5px", "30px", "18px"]}
 bgColor={"#C0DCF1"}
       fontSize={"14px"}
       fontWeight={700}
       _hover={{ textDecoration: "underline" }}
       cursor={"pointer"}
+      
       >
         Don't miss out!{" "}
         <span style={{ fontSize: "400"}}>

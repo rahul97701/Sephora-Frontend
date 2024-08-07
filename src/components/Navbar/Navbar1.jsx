@@ -1,6 +1,11 @@
-import { SimpleGrid } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import SearchInput from "./SearchInput";
+import { 
+    SimpleGrid,
+Box,
+Text,
+ } from "@chakra-ui/react"
+
 
 
 const Navbar1 = () => {
@@ -24,7 +29,7 @@ const Navbar1 = () => {
                 >
                <Link to={"/"}>
                    <Text fontWeight={600}
-                   fonSize={["14px", "20px", "24px", "24px"]}
+                   fontSize={["14px", "20px", "24px", "24px"]}
                    textAlign={["center", "center", "right", "left"]}
                    >
                     S E P H O R A
