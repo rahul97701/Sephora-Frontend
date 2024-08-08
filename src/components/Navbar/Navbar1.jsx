@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import SearchInput from "./SearchInput";
+import { HamburgerIcon } from "@chakra-ui/icons";
+
 import {
   SimpleGrid,
   Box,
@@ -13,7 +13,18 @@ import {
   PopoverBody,
   Img,
   Divider,
+  Image,
 } from "@chakra-ui/react";
+
+import { Link, useNavigate } from "react-router-dom";
+import SearchInput from "./SearchInput";
+import { BiBell, BiCurrentLocation, BiMessage } from "react-icons/bi";
+import { HiOutlineUserGroup } from "react-icons/hi2";
+import { PiBasketLight } from "react-icons/pi";
+import { useSelector } from "react-redux";
+import Signup from "../../pages/Signup";
+import Login from "../../pages/Login";
+import SearchInput from "./SearchInput";
 
 const Navbar1 = () => {
   const { isLogin } = useSelector((state) => state.loginState);
