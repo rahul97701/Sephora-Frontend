@@ -10,9 +10,9 @@ import Navbar1 from "../components/Navbar/Navbar1";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/header" element={<Header />} />
-      <Route path="/Navbar1" element={<Navbar1 />} />
+      {/* <Route path="/home" element={<Home />} />
+      <Route path="/header" element={<Header />} /> */}
+      <Route path="/Navbar" element={<Navbar1 />} />
       {/* <Route
         path="/cart"
         element={
