@@ -1,40 +1,38 @@
-import { Box, Flex, List, ListItem } from "@chakra-ui/react";
-import { withTheme } from "@emotion/react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+    import { Box, Flex, List, ListItem } from "@chakra-ui/react";
+    import { withTheme } from "@emotion/react";
+    import { useEffect, useState } from "react";
+    import { useNavigate } from "react-router-dom";
 
-const useDebounce = (value, delay) => {
+    const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useDebounce(value);
     useEffect(() => {
         const handleTimeout = setTimeout(() => {
-             setDebouncedValue(value);
+        setDebouncedValue(value);
         }, delay);
-    return () => {
+        return () => {
         clearTimeout(handleTimeout);
+        };
+    }, [value, delay]);
+    return debouncedValue;
     };
-}, [value, delay]);
-return debouncedValue;
-    
-};
 
-
-function SearchInput() { 
-   const [searchProducts, setSearchProducts] = useState("");
-   const [isTrue, setIsTrue] = useState(false);
-   const [cross, setCross] = useState(false);
-   const [data, setData] = useState([]);
-   const handleNavigation = useNavigate();
-   const debouncedInputValue = useDebounce(searchProducts, 500)
+    function SearchInput() {
+    const [searchProducts, setSearchProducts] = useState("");
+    const [isTrue, setIsTrue] = useState(false);
+    const [cross, setCross] = useState(false);
+    const [data, setData] = useState([]);
+    const handleNavigation = useNavigate();
+    const debouncedInputValue = useDebounce(searchProducts, 500);
 
     const fetchingSearchedData = async () => {
-       try {
+        try {
         const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/product?search=${searchProducts}`
         );
         setData(response.data.data);
-       } catch (error) {
+        } catch (error) {
         console.error(error);
-       }
+        }
     };
 
     const handleSearchNavigation = (id) => {
@@ -45,92 +43,91 @@ function SearchInput() {
 
     useEffect(() => {
         if (debouncedInputValue && searchProducts?.length) {
-            fetchingSearchedData();
+        fetchingSearchedData();
         }
 
         if (searchProducts === "") {
-            setIsTrue(false);
+        setIsTrue(false);
         }
     }, [debouncedInputValue]);
 
-       return (
+    return (
         <Box>
-            <Flex
+        <Flex
             bg={"white"}
             w={"full"}
             p={1}
             alignItems={"center"}
             rounded={"3xl"}
             className={"double-width"}
+        >
+            <Input
+            type={"text"}
+            value={searchProducts}
+            OnChange={(e) => {
+                setSearchProducts(e.target.value);
+                setIsTrue(true);
+                setCross(true);
+            }}
+            placeholder="Search"
+            fontSize={550}
+            borderRadius={"20px"}
+            />
+        </Flex>
+        {data.length && isTrue ? (
+            <List
+            zIndex={10}
+            position={"absolute"}
+            w={["80%", "600px"]}
+            maxHeight={"80"}
+            rounded={"3xl"}
+            marginLeft={5}
+            bg={"white"}
+            overflow={"auto"}
+            marginTop={2}
             >
-                <Input
-                type={"text"}
-                value={searchProducts}
-                OnChange={(e) => {
-                    setSearchProducts(e.target.value);
-                    setIsTrue(true);
-                    setCross(true);
-                }}
-                placeholder="Search"
-                fontSize={550}
-                borderRadius={"20px"}
-                />
-                 </Flex>
-                 {data.length && isTrue ? (
-                    <List
-                    zIndex={10}
-                    position={"absolute"}
-                    w={["80%", "600px"]}
-                    maxHeight={"80"}
-                    rounded={"3xl"}
-                    marginLeft={5}
-                    bg={"white"}
-                    overflow={"auto"}
-                    marginTop={2}
-                    >
-                        {data.length ? (
-                            data?.map((result) => (
-                                <ListItem
-                                padding={2}
-                                borderBottom={"1px"}
-                                borderColor={"gray.200"}
-                                display={"flex"}
-                                justifyContent={"space-between"}
-                                color={"black"}
-                                cursor={"pointer"}
-                                _hover={{ background: "grey.100"}}
-                                key={result._id}
-                                onClick={() => handleSearchNavigation(result._id)}
-                            >
-                                    {result.title}
-                                    </ListItem>
-                            ))
-                        ) : (
-                            <ListenItem>No Data Found</ListenItem>
-    
-                        )}
-                        </List>
-                 ) : (
-                    isTrue && (
-                        <Box
-                           zIndex={10}
-                           position={"absolute"}
-                           width={"700px"}
-                           maxHeight={"80"}
-                           rounded={"3xl"}
-                           marginLeft={5}
-                           color={"black"}
-                           padding={5}
-                           background={"white"}
-                           overflow={"auto"}
-                           marginTop={2}  
-                           >
-                           No Data Found         
-                        </Box>
-                    )
-                 )}
+            {data.length ? (
+                data?.map((result) => (
+                <ListItem
+                    padding={2}
+                    borderBottom={"1px"}
+                    borderColor={"gray.200"}
+                    display={"flex"}
+                    justifyContent={"space-between"}
+                    color={"black"}
+                    cursor={"pointer"}
+                    _hover={{ background: "grey.100" }}
+                    key={result._id}
+                    onClick={() => handleSearchNavigation(result._id)}
+                >
+                    {result.title}
+                </ListItem>
+                ))
+            ) : (
+                <ListenItem>No Data Found</ListenItem>
+            )}
+            </List>
+        ) : (
+            isTrue && (
+            <Box
+                zIndex={10}
+                position={"absolute"}
+                width={"700px"}
+                maxHeight={"80"}
+                rounded={"3xl"}
+                marginLeft={5}
+                color={"black"}
+                padding={5}
+                background={"white"}
+                overflow={"auto"}
+                marginTop={2}
+            >
+                No Data Found
+            </Box>
+            )
+        )}
         </Box>
-       );
+    );
     }
 
     export default SearchInput;
