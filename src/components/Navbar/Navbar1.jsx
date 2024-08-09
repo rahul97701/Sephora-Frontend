@@ -210,10 +210,12 @@ const Navbar1 = () => {
           </Popover>
 
           <Popover trigger="hover">
+            {isLogin || data?.isAuth ? (
             <Flex fontSize={"3xl"} alignItems={"center"} gap={"10px"}>
               <HiOutlineUserGroup />
-              <Text fontSize={"14px"}>Hi, </Text>
+              <Text fontSize={"14px"}>Hi, {data?.data}</Text>
             </Flex>
+            ) : (
             <PopoverTrigger>
               <Button
                 backgroundColor={"white"}
@@ -229,6 +231,7 @@ const Navbar1 = () => {
                 </Flex>
               </Button>
             </PopoverTrigger>
+            )}
             <PopoverContent>
               <PopoverHeader>
                 <Flex>
@@ -370,7 +373,16 @@ const Navbar1 = () => {
             </PopoverContent>
           </Popover>
           <Popover trigger="hover">
-            <Button>Logout</Button>
+            {isLogin || data?.isAuth ? (
+            <Button
+            onClick={handleLogout}
+            bgColor={"white"}
+            borderRadius={"none"}
+            _hover={{ bgColor: "white", borderBottom: "2px solid #333" }}
+            >
+              Logout
+              </Button>
+            ) : (
             <PopoverTrigger>
               <Button
                 backgroundColor={"white"}
@@ -399,6 +411,7 @@ const Navbar1 = () => {
                 </Flex>
               </Button>
             </PopoverTrigger>
+            )}
             <PopoverContent>
               <PopoverHeader>
                 <Flex>
