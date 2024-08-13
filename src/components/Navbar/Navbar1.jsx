@@ -17,7 +17,6 @@ import {
 } from "@chakra-ui/react";
 
 import { Link, useNavigate } from "react-router-dom";
-import SearchInput from "./SearchInput";
 import { BiBell, BiCurrentLocation, BiMessage } from "react-icons/bi";
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { PiBasketLight } from "react-icons/pi";
