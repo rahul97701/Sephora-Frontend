@@ -30,7 +30,7 @@ const Product = () => {
             dispatch({ type: IS_LOADING });
 
             const res = await axios.get(
-                `${import.meta.env.VITE_API_URL}/product/${id}`
+                `${"import.meta.env.VITE_API_URL"}/product/${id}`
             );
 
             setData(res.data.Product);

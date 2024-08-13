@@ -18,7 +18,7 @@
 
             const response = await axios.get(API_URL, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${"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z"}`,
                 },
             });
 

@@ -132,12 +132,14 @@
                         </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
-                            <form>
-                                <SimpleGrid>
-                                    <Box>
+                            <form> onSubmit={handleSubmit}
+                                <SimpleGrid
+                                spacing={"15px"}>
+                                    <Box
+                                    width={"50%"}>
                                     <Image 
                                     src="https://www.sephora.com/img/ufe/bi/logo-beauty-insider.svg"
-                                    w={"100%"}
+                                    width={"100%"}
                                     />
                                     </Box>
                                     <Text fontSize={"14px"} fontWeight={400}>
