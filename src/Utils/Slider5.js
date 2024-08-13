@@ -1,4 +1,4 @@
-    const slides = [
+    const slides3 = [
         {
         title: "Living Proof",
         image:
@@ -121,5 +121,5 @@
         },
     ];
     
-    export default slides;
+    export default slides3;
     

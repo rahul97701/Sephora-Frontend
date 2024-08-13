@@ -1,4 +1,4 @@
-    const slides = [
+    const slides1 = [
         {
         title: "belif",
         image:
@@ -81,5 +81,5 @@
         },
     ];
     
-    export default slides;
+    export default slides1;
     

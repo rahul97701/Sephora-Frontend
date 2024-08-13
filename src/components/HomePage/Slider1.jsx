@@ -1,9 +1,13 @@
-  import { SimpleGrid, Box, Img, Text } from "@chakra-ui/react";
+  import { 
+    SimpleGrid, 
+    Box, 
+    Img, 
+    Text } from "@chakra-ui/react";
   import { useNavigate } from "react-router-dom"
   import Slider from "react-slick";
   import "slick-carousel/slick/slick.css";
   import "slick-carousel/slick/slick-theme.css";
-  import { useNavigate } from "react-router-dom";
+  import slides from "../../Utils/Slider1";
 
   const Slider1 = () => {
     const handleNavigation = useNavigate();

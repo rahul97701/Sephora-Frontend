@@ -27,4 +27,4 @@ const cards = [
     },
   ];
 
-  export default Section1;
+  export default cards;

@@ -15,8 +15,9 @@
             useToast,
         } from "@chakra-ui/react"
         import { useDispatch, useSelector } from "react-redux";
-
-
+        import Signup from "./Signup";
+        import { useState } from "react";
+        import { loginUser } from "../Redux/Login/actions";
 
         const Login = () => {
             const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,7 +58,7 @@
             return (
                 <Box>
                     <Button
-                    color={white}
+                    color={"white"}
                     backgroundColor={"black"}
                     borderRadius={"20px"}
                     onClick={onOpen}

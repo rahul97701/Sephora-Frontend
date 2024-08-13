@@ -1,4 +1,4 @@
-const cards = [
+const card2 = [
     {
       img: "https://www.sephora.com/contentimages/homepage/050124/sephoia%2079.JPG?imwidth=400",
       title: "SEPHORiA is Coming to Atlanta",
@@ -26,4 +26,4 @@ const cards = [
     },
   ];
 
-  export default cards;
+  export default card2;

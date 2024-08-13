@@ -1,6 +1,6 @@
     import { Box, Divider, Img, SimpleGrid, Text } from "@chakra-ui/react";
     import Slider from "react-slick";
-    import slides from "../../Utils/Homepage/Slider5";
+    import slides3 from "../../Utils/Slider5";
     import { useNavigate } from "react-router-dom";
 
     const Slider5 = () => {
@@ -91,7 +91,7 @@
         </Text>
 
         <Slider {...settings}>
-            {slides.map((elem, i) => (
+            {slides3.map((elem, i) => (
             <SimpleGrid key={i} cursor={"pointer"} padding={"10px"}>
                 <SimpleGrid
                 boxShadow={"base"}

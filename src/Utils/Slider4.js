@@ -1,4 +1,4 @@
-    const slides = [
+    const slides2 = [
         {
         title: "FREE* Hair-Care Trial Size",
         image:
@@ -151,5 +151,5 @@
         },
     ];
     
-    export default slides;
+    export default slides2;
     

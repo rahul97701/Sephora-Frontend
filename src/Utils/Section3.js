@@ -1,4 +1,4 @@
-const card = [
+const card1 = [
     {
       img: "https://www.sephora.com/contentimages/homepage/041624/cleanplanet.JPG?imwidth=48",
       title: "Clean + Planet Aware at Sephora",
@@ -41,5 +41,5 @@ const card = [
     },
   ];
   
-  export default card;
+  export default card1;
   

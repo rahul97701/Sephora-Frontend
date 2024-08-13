@@ -1,16 +1,20 @@
-    import { Box, Flex, List, ListItem } from "@chakra-ui/react";
+    import { 
+        Box, 
+        Flex, 
+        List, 
+        ListItem } from "@chakra-ui/react";
     import { withTheme } from "@emotion/react";
     import { useEffect, useState } from "react";
     import { useNavigate } from "react-router-dom";
-
+    
     const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useDebounce(value);
     useEffect(() => {
-        const handleTimeout = setTimeout(() => {
+        const handler = setTimeout(() => {
         setDebouncedValue(value);
         }, delay);
         return () => {
-        clearTimeout(handleTimeout);
+        clearTimeout(handler);
         };
     }, [value, delay]);
     return debouncedValue;
@@ -78,15 +82,15 @@
             <List
             zIndex={10}
             position={"absolute"}
-            w={["80%", "600px"]}
+            width={["80%", "600px"]}
             maxHeight={"80"}
             rounded={"3xl"}
             marginLeft={5}
-            bg={"white"}
+            background={"white"}
             overflow={"auto"}
             marginTop={2}
             >
-            {data.length ? (
+            {data?.length ? (
                 data?.map((result) => (
                 <ListItem
                     padding={2}
@@ -104,7 +108,7 @@
                 </ListItem>
                 ))
             ) : (
-                <ListenItem>No Data Found</ListenItem>
+                <ListItem>No Data Found</ListItem>
             )}
             </List>
         ) : (
@@ -128,6 +132,6 @@
         )}
         </Box>
     );
-    }
+}
 
     export default SearchInput;

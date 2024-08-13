@@ -8,7 +8,7 @@
         const handleNavigation = useNavigate();
 
         function SampleNextArrow(props) {
-            const { className, style, onClik } = props;
+            const { className, style, onClick } = props;
             return (
                 <div
                 className={className}
@@ -95,8 +95,21 @@
 
             <Slider {...settings}>
             {arr.map((e, i) => (
-                <SimpleGrid>
-                    <Box>
+                <SimpleGrid 
+                key={i}
+                cursor={"pointer"}
+                padding={"10px"}>
+                    <SimpleGrid
+                    boxShadow={"base"}
+                    transition={"all .5s ease"}
+                    _hover={{ transform: "translateY(-5px)" }}
+                    p={["10px", "10px", "20px", "30px"]}
+                    >
+                    <Box
+                    marginBottom={"10px"}
+                    marginX={"auto"}
+                    width={"150px"}
+                    >
                         <ImgBox 
                         src={e.image} 
                         category={e.category}
@@ -120,6 +133,7 @@
                     >
                         {e.price}
                     </Text>
+                </SimpleGrid>
                 </SimpleGrid>
             ))}
             </Slider>

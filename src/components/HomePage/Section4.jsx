@@ -1,5 +1,10 @@
-import { Box, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { 
+  Box, 
+  Img, 
+  SimpleGrid, 
+  Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import card2 from "../../Utils/Section4";
 
 const Section4 = () => {
   const handleNavigation = useNavigate();
@@ -34,7 +39,7 @@ const Section4 = () => {
         px={["2", "2", "10", "40"]}
         py={"30px"}
       >
-        {cards.map((elem, i) => (
+        {card2.map((elem, i) => (
           <SimpleGrid color={elem.clr} key={i} cursor={"pointer"}>
             <Box>
               <ImgBox src={elem.img} category={elem.category} />

@@ -1,5 +1,10 @@
-import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
-import card from "../../Utils/Section3";
+import { 
+  Box,
+  Flex, 
+  Img, 
+  SimpleGrid, 
+  Text } from "@chakra-ui/react";
+import card1 from "../../Utils/Section3";
 import { useNavigate } from "react-router-dom";
 
 const Section3 = () => {
@@ -41,7 +46,7 @@ const Section3 = () => {
           ]}
           spacing={"10px"}
         >
-          {card.map((e, i) => (
+          {card1.map((e, i) => (
             <SimpleGrid
               key={i}
               gridAutoColumns={"1fr"}
