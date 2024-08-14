@@ -7,7 +7,7 @@
   import Slider from "react-slick";
   import "slick-carousel/slick/slick.css";
   import "slick-carousel/slick/slick-theme.css";
-  import slides from "../../Utils/Slider1";
+  import slides from "../../Utils/HomePage/Slider1";
 
   const Slider1 = () => {
     const handleNavigation = useNavigate();

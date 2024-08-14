@@ -4,7 +4,7 @@ import {
   Img, 
   SimpleGrid, 
   Text } from "@chakra-ui/react";
-import card1 from "../../Utils/Section3";
+import card1 from "../../Utils/HomePage/Section3";
 import { useNavigate } from "react-router-dom";
 
 const Section3 = () => {

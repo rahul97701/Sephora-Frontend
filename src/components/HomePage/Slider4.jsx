@@ -1,6 +1,6 @@
     import { Box, Button, Flex, SimpleGrid, Text } from "@chakra-ui/react";
     import Slider from "react-slick";
-    import slides2 from "../../Utils/Slider4";
+    import slides2 from "../../Utils/HomePage/Slider4";
     import { useNavigate } from "react-router-dom";
 
     const Slider4 = () => {

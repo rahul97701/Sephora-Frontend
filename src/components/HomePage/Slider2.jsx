@@ -1,7 +1,7 @@
     import { SimpleGrid, Text, Img, Box } from "@chakra-ui/react";
     import { useNavigate } from "react-router-dom"
     import Slider from "react-slick";
-    import arr from "../../Utils/Slider2"
+    import arr from "../../Utils/HomePage/Slider2"
 
 
     const Slider2 = () => {

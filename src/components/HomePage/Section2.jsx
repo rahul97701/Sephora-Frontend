@@ -6,7 +6,7 @@
         Img
         } from "@chakra-ui/react";
     import { useNavigate } from "react-router-dom";
-    import card from "../../Utils/Section2";
+    import card from "../../Utils/HomePage/Section2";
 
     const Section2 = () => {
         const handleNavigation = useNavigate();

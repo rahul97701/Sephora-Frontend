@@ -4,7 +4,7 @@ import {
   SimpleGrid, 
   Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import card2 from "../../Utils/Section4";
+import card2 from "../../Utils/HomePage/Section4";
 
 const Section4 = () => {
   const handleNavigation = useNavigate();
